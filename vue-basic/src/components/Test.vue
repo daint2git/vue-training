@@ -39,14 +39,6 @@ export default {
       lastName: 'nguyen',
     }
   },
-  methods: {
-    reverseMessage() {
-      this.message2 = this.message2
-        .split(' ')
-        .reverse()
-        .join(' ')
-    },
-  },
   computed: {
     // một computed getter
     reversedMessage() {
@@ -65,6 +57,14 @@ export default {
         this.firstName = names[0]
         this.lastName = names[names.length - 1]
       },
+    },
+  },
+  methods: {
+    reverseMessage() {
+      this.message2 = this.message2
+        .split(' ')
+        .reverse()
+        .join(' ')
     },
   },
 }

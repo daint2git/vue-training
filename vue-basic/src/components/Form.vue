@@ -4,32 +4,32 @@
       <span>Thông điệp có nhiều dòng:</span>
       <p style="white-space: pre-line;">{{ message }}</p>
       <br />
-      <textarea v-model="message" placeholder="Nhập văn bản có nhiều dòng"></textarea>
+      <textarea v-model="message" placeholder="Nhập văn bản có nhiều dòng" />
     </div>
     <br />
     <div>
-      <input type="checkbox" id="checkbox1" v-model="checked" />
+      <input v-model="checked" id="checkbox1" type="checkbox" />
       <label for="checkbox1">{{ checked }}</label>
     </div>
     <br />
     <div>
-      <input type="checkbox" id="com-chien-toi" value="Cơm chiên tỏi" v-model="checkedNames" />
+      <input v-model="checkedNames" id="com-chien-toi" type="checkbox" value="Cơm chiên tỏi" />
       <label for="com-chien-toi">Cơm chiên tỏi</label>
       <br />
-      <input type="checkbox" id="dot-bi-xao-toi" value="Đọt bí xào tỏi" v-model="checkedNames" />
+      <input v-model="checkedNames" id="dot-bi-xao-toi" type="checkbox" value="Đọt bí xào tỏi" />
       <label for="dot-bi-xao-toi">Đọt bí xào tỏi</label>
       <br />
-      <input type="checkbox" id="canh-rau-rung" value="Canh rau rừng" v-model="checkedNames" />
+      <input v-model="checkedNames" id="canh-rau-rung" type="checkbox" value="Canh rau rừng" />
       <label for="canh-rau-rung">Canh rau rừng</label>
       <br />
       <span>Món đã chọn: {{ checkedNames }}</span>
     </div>
     <br />
     <div>
-      <input type="radio" id="cac-mon-rau" value="Các món rau" v-model="picked" />
+      <input v-model="picked" id="cac-mon-rau" type="radio" value="Các món rau" />
       <label for="cac-mon-rau">Các món rau</label>
       <br />
-      <input type="radio" id="cac-mon-thit" value="Các món thịt" v-model="picked" />
+      <input v-model="picked" id="cac-mon-thit" type="radio" value="Các món thịt" />
       <label for="cac-mon-thit">Các món thịt</label>
       <br />
       <span>Đã chọn: {{ picked }}</span>
@@ -75,12 +75,12 @@
     </div>
     <br />
     <div :style="{ fontSize: fontSize + 'em' }">
-      <ButtonDemo text="+" v-on:change-text="fontSize += 0.1"></ButtonDemo>
-      <ButtonDemo text="-" v-on:change-text="fontSize -= 0.1"></ButtonDemo>
-      <ButtonDemo text="+" v-on:change-text="fontSize += $event"></ButtonDemo>
-      <ButtonDemo text="-" v-on:change-text="fontSize -= $event"></ButtonDemo>
-      <ButtonDemo text="+" v-on:change-text="onChangeText($event, 'inc')"></ButtonDemo>
-      <ButtonDemo text="-" v-on:change-text="onChangeText($event, 'dec')"></ButtonDemo>
+      <ButtonDemo v-on:change-text="fontSize += 0.1" text="+" />
+      <ButtonDemo v-on:change-text="fontSize -= 0.1" text="-" />
+      <ButtonDemo v-on:change-text="fontSize += $event" text="+" />
+      <ButtonDemo v-on:change-text="fontSize -= $event" text="-" />
+      <ButtonDemo v-on:change-text="onChangeText($event, 'inc')" text="+" />
+      <ButtonDemo v-on:change-text="onChangeText($event, 'dec')" text="-" />
       <ButtonDemo>AAAAA</ButtonDemo>
       <div is="ButtonDemo">BBBBB</div>
       <button-demo>

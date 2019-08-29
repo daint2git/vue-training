@@ -1,14 +1,13 @@
 <template>
   <button @click="onClick">
     {{ text }}
-    <slot></slot>
+    <slot />
   </button>
 </template>
 
 <script>
 export default {
   name: 'ButtonDemo',
-  // props: ['text'],
   props: {
     text: {
       type: String,

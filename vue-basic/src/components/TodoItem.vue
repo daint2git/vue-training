@@ -4,7 +4,9 @@
 
 <script>
 export default {
-  name: 'todo-item',
-  props: ['todo'],
+  name: 'TodoItem',
+  props: {
+    todo: Object,
+  },
 }
 </script>

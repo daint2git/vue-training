@@ -5,6 +5,7 @@ import Test from '@/components/Test'
 import Test2 from '@/components/Test2'
 import Test3 from '@/components/Test3'
 import Form from '@/components/Form'
+import List from '@/components/Todo/List'
 
 Vue.use(Router)
 
@@ -31,9 +32,14 @@ export default new Router({
       component: Test3,
     },
     {
-      path: '/',
+      path: '/form',
       name: Form.name,
       component: Form,
+    },
+    {
+      path: '/',
+      name: List.name,
+      component: List,
     },
   ],
 })

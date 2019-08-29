@@ -6,7 +6,7 @@
       {{ text }}
     </div>
     <div v-show="hasError">Has Error</div>
-    <input type="text" v-model="text" />
+    <input v-model="text" type="text" />
     <br />
     <ul>
       <li v-for="(value, key, index) in userObject" :key="key">
@@ -21,8 +21,8 @@
     <button @click="say('BB', $event)">Hãy nói BB</button>
     <p>{{ message }}</p>
     <br />
-    <input type="text" placeholder="edit me" @keyup.enter="handleEnter" />
-    <input type="text" placeholder="edit me" @keyup.page-down="handlePageDown" />
+    <input @keyup.enter="handleEnter" type="text" placeholder="edit me" />
+    <input @keyup.page-down="handlePageDown" type="text" placeholder="edit me" />
   </div>
 </template>
 

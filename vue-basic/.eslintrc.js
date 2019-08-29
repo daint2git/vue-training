@@ -6,12 +6,13 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module',
+    ecmaVersion: 6,
   },
   env: {
     browser: true,
   },
 
-  extends: ['airbnb-base', 'plugin:prettier/recommended', 'plugin:vue/essential'],
+  extends: ['airbnb-base', 'plugin:vue/recommended', 'plugin:prettier/recommended', 'prettier/vue'],
   // required to lint *.vue files
   plugins: ['import'],
   // check if imports actually resolve
@@ -24,6 +25,7 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
+    // 'prettier/prettier': 1,
     // don't require .vue extension when importing
     'import/extensions': [
       'error',
@@ -56,5 +58,37 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-new': 0,
+    'vue/require-default-prop': 0,
+    // 'vue/max-attributes-per-line': [
+    //   1,
+    //   {
+    //     singleline: 20,
+    //     multiline: {
+    //       max: 1,
+    //       allowFirstLine: false,
+    //     },
+    //   },
+    // ],
+    // 'vue/html-closing-bracket-newline': [
+    //   1,
+    //   {
+    //     singleline: 'never',
+    //     multiline: 'always',
+    //   },
+    // ],
+
+    // 'vue/html-self-closing': [
+    //   'error',
+    //   { html: { void: 'always', normal: 'always', component: 'always' } },
+    // ],
+    // 'vue/component-name-in-template-casing': [1, 'kebab-case'],
+    // 'vue/component-name-in-template-casing': [
+    //   'error',
+    //   'PascalCase' | 'kebab-case',
+    //   {
+    //     registeredComponentsOnly: false,
+    //   },
+    // ],
+    // 'vue/html-indent': [1, 2, { attribute: 1, closeBracket: 0 }],
   },
 }
