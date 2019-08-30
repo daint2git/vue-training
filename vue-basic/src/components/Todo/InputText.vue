@@ -1,5 +1,5 @@
 <template>
-  <input v-model="value" @input="onChange($event)" type="text" class="input" />
+  <input :value="value" v-on="listeners" type="text" class="input" />
 </template>
 
 <script>
@@ -11,20 +11,26 @@ export default {
       default: '',
     },
   },
-  methods: {
-    onChange(event) {
-      console.log(event)
-      this.$emit('change', event.target.value)
+  computed: {
+    listeners() {
+      return {
+        // Pass all component listeners directly to input
+        ...this.$listeners,
+        // Override input listener to work with v-model
+        input: event => {
+          this.$emit('input', event.target.value)
+        },
+      }
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../../sass/variables.scss';
+@import '@/sass/variables.scss';
 
 .input {
-  width: 100%;
+  width: 50%;
   padding: 8px 10px;
   border: 1px solid $blue;
 }

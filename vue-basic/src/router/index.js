@@ -6,6 +6,7 @@ import Test2 from '@/components/Test2'
 import Test3 from '@/components/Test3'
 import Form from '@/components/Form'
 import List from '@/components/Todo/List'
+import Dynamic from '@/components/Dynamic&Async/Dynamic'
 
 Vue.use(Router)
 
@@ -37,9 +38,14 @@ export default new Router({
       component: Form,
     },
     {
-      path: '/',
+      path: '/list',
       name: List.name,
       component: List,
+    },
+    {
+      path: '/',
+      name: Dynamic.name,
+      component: Dynamic,
     },
   ],
 })
