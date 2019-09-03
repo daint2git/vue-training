@@ -13,6 +13,20 @@ Vue.config.productionTip = false
 const Root = new Vue({
   router,
   components: { App },
+  data: {
+    foo: 1,
+  },
+  computed: {
+    bar() {
+      console.log('this is bar') // eslint-disable-line
+      return null
+    },
+  },
+  methods: {
+    baz() {
+      console.log('this is baz') // eslint-disable-line
+    },
+  },
   template: '<App/>',
 })
 

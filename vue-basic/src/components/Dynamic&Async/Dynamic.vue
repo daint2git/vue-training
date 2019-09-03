@@ -12,6 +12,7 @@
       <!-- eslint-disable-next-line -->
       <component v-bind:is="currentTabComponent" class="tab"></component>
     </keep-alive>
+    <input ref="inputRef" type="text" />
   </div>
 </template>
 
@@ -35,6 +36,9 @@ export default {
     currentTabComponent() {
       return `tab-${this.currentTab.toLowerCase()}`
     },
+  },
+  mounted() {
+    console.log(this.$refs.inputRef) // eslint-disable-line
   },
 }
 </script>

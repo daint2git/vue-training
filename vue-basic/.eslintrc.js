@@ -25,7 +25,7 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
-    // 'prettier/prettier': 1,
+    'prettier/prettier': 1,
     // don't require .vue extension when importing
     'import/extensions': [
       'error',

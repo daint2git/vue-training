@@ -7,6 +7,9 @@ import Test3 from '@/components/Test3'
 import Form from '@/components/Form'
 import List from '@/components/Todo/List'
 import Dynamic from '@/components/Dynamic&Async/Dynamic'
+import TransitionDemo from '@/components/TransitionDemo'
+import AnimationDemo from '@/components/AnimationDemo'
+import MixinDemo from '@/components/Mixin/Demo'
 
 Vue.use(Router)
 
@@ -43,9 +46,24 @@ export default new Router({
       component: List,
     },
     {
-      path: '/',
+      path: '/dynamic',
       name: Dynamic.name,
       component: Dynamic,
+    },
+    {
+      path: '/transition',
+      name: TransitionDemo.name,
+      component: TransitionDemo,
+    },
+    {
+      path: '/animation',
+      name: AnimationDemo.name,
+      component: AnimationDemo,
+    },
+    {
+      path: '/',
+      name: MixinDemo.name,
+      component: MixinDemo,
     },
   ],
 })
