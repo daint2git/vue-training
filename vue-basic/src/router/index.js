@@ -10,6 +10,9 @@ import Dynamic from '@/components/Dynamic&Async/Dynamic'
 import TransitionDemo from '@/components/TransitionDemo'
 import AnimationDemo from '@/components/AnimationDemo'
 import MixinDemo from '@/components/Mixin/Demo'
+import VueAPI from '@/components/VueAPI/Directives'
+import ModalExample from '@/components/ModalExample'
+import TodoMVC from '@/components/TodoMVC'
 
 Vue.use(Router)
 
@@ -61,9 +64,24 @@ export default new Router({
       component: AnimationDemo,
     },
     {
-      path: '/',
+      path: '/mixin',
       name: MixinDemo.name,
       component: MixinDemo,
+    },
+    {
+      path: '/api',
+      name: VueAPI.name,
+      component: VueAPI,
+    },
+    {
+      path: '/modal',
+      name: ModalExample.name,
+      component: ModalExample,
+    },
+    {
+      path: '/',
+      name: TodoMVC.name,
+      component: TodoMVC,
     },
   ],
 })

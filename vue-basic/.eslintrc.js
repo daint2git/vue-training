@@ -48,6 +48,7 @@ module.exports = {
         ],
       },
     ],
+    'no-console': 0,
     // allow optionalDependencies
     'import/no-extraneous-dependencies': [
       'error',
