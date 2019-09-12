@@ -12,6 +12,9 @@ import UserSettings from '../components/NestedNamedViews/UserSettings'
 import UserEmailsSubscriptions from '../components/NestedNamedViews/UserEmailsSubscriptions'
 import UserProfile from '../components/NestedNamedViews/UserProfile'
 import UserProfilePreview from '../components/NestedNamedViews/UserProfilePreview'
+import DataFetching from '../components/DataFetching'
+import DataFetchingPost from '../components/DataFetching/Post'
+import LazyLoadingBeforeMount, { FooAsync } from '../components/LazyLoadingBeforeMount'
 
 const NotFound = () => import('../components/NotFound')
 
@@ -132,6 +135,30 @@ const routes = [
     path: '/notfound',
     name: NotFound.name,
     component: NotFound,
+  },
+  {
+    path: '/data-fetching',
+    name: DataFetching.name,
+    component: DataFetching,
+    children: [
+      {
+        path: 'post/:id',
+        name: DataFetchingPost.name,
+        component: DataFetchingPost,
+      },
+    ],
+  },
+  {
+    path: '/lazy-loading-before-mount',
+    name: LazyLoadingBeforeMount.name,
+    component: LazyLoadingBeforeMount,
+    children: [
+      {
+        path: 'async',
+        name: FooAsync.name,
+        component: FooAsync,
+      },
+    ],
   },
   // catch all redirect
   {

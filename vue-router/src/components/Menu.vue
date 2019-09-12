@@ -13,13 +13,30 @@
       <router-link to="/é">/é</router-link>
     </li>
     <li>
-      <router-link to="/é?t=%25ñ">/é?t=%25ñ</router-link>
+      <router-link to="/é/ñ">/é/ñ</router-link>
     </li>
     <li>
-      <router-link to="/é#%25ñ">/é#%25ñ</router-link>
+      <router-link to="/é/ñ?t=%25ñ">/é/ñ?t=%ñ</router-link>
+    </li>
+    <li>
+      <router-link to="/é/ñ#é">/é/ñ#é</router-link>
     </li>
     <li>
       <router-link to="/with-params/999">/with-params/999</router-link>
+    </li>
+    <router-link to="/with-params/999" v-slot="props">
+      <li :class="[props.isActive && 'active', props.isExactActive && 'exact-active']">
+        <a :href="props.href" @click="props.navigate">{{ props.route.path }} (with v-slot).</a>
+      </li>
+    </router-link>
+    <li>
+      <router-link to="/with-params/999" replace>/with-params/999 (with replace).</router-link>
+    </li>
+    <li>
+      <router-link to="/with-params/999" tag="div">/with-params/999 (with tag div).</router-link>
+    </li>
+    <li>
+      <router-link to="/with-params/999" exact>/with-params/999 (with exact).</router-link>
     </li>
     <li>
       <router-link :to="{ name: 'WithParams', params: { id: 999 } }">/with-params/999</router-link>
@@ -60,6 +77,12 @@
     <li>
       <router-link to="/notfound">/notfound</router-link>
     </li>
+    <li>
+      <router-link to="/data-fetching">/data-fetching</router-link>
+    </li>
+    <li>
+      <router-link to="/lazy-loading-before-mount">/lazy-loading-before-mount</router-link>
+    </li>
   </ul>
 </template>
 
@@ -77,5 +100,18 @@ ul {
 li {
   display: block;
   margin: 0 10px;
+}
+.active {
+  background-color: gold;
+}
+.exact-active {
+  background-color: silver;
+}
+
+a.router-link-active {
+  color: #f66;
+}
+li.router-link-active a {
+  color: #f66;
 }
 </style>

@@ -16,13 +16,19 @@ const router = new VueRouter({
 
 // eslint-disable-next-line
 router.beforeEach((to, from, next) => {
-  console.log('beforeEach', to.matched)
+  console.log('beforeEach', to.matched, to)
+  next()
+})
+
+// eslint-disable-next-line
+router.beforeResolve((to, from, next) => {
+  console.log('beforeResolve', to.matched)
   next()
 })
 
 // eslint-disable-next-line
 router.afterEach((to, from) => {
-  console.log('afterEach')
+  console.log('afterEach', to.matched)
 })
 
 export default router
