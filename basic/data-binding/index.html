@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <style>
+    .class1 {
+      color: red;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <h2 v-bind:class="className">{{title}}</h2>
+      <a v-bind:href="link.href" v-bind:target="link.target">{{link.content}}</a>
+      <p>{{number + 1}}</p>
+      <p>{{increaseNumber(4)}}</p>
+      <p>{{check ? 'ok' : 'ng'}}</p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

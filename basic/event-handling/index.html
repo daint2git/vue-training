@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{count}}</p>
+      <button v-on:click="increaseCount">increase</button>
+      <button v-on:click="increaseCountBy($event, 5)">increase by 5</button>
+      <button v-on:click="decreaseCount">decrease</button>
+      <button v-on:click="count -= 5">decrease</button>
+      <br />
+      <div id="box" v-on:mousemove="handleMouseMove">
+        <p>({{mouse.x}}, {{mouse.y}})</p>
+      </div>
+      <br />
+      <form v-on:submit.prevent="handleFormSubmit">
+        <label>Email:</label>
+        <input type="text" name="email" />
+        <button type="submit">submit</button>
+      </form>
+      <br />
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" v-on:keyup.enter="handleKeyup" />
+      </div>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

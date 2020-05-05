@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{message}}</p>
+      <p>{{message.split('').reverse().join('')}}</p>
+      <p>{{reverseMessage}}</p>
+      <br />
+      <p>{{a}}</p>
+      <p>{{b}}</p>
+      <p>{{step}}</p>
+      <p>A + 1 = {{addA}}</p>
+      <p>B + 1 = {{addB}}</p>
+      <button v-on:click="a += step">A + {{step}}</button>
+      <button v-on:click="b += step">B + {{step}}</button>
+      <button v-on:click="step += 1">Step + 1</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
