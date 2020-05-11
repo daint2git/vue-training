@@ -1,3 +1,3 @@
 module.exports = {
-  chainWebpack: config => config,
+  chainWebpack: (config) => config,
 };

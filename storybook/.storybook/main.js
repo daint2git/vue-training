@@ -5,8 +5,27 @@ const defaultWebpackConfig = require('../node_modules/@vue/cli-service/webpack.c
 
 module.exports = {
   stories: ['../src/**/stories.js'],
-  webpackFinal: async config => {
+  addons: ['@storybook/addon-storysource', '@storybook/addon-backgrounds'],
+  webpackFinal: config => {
     config.module.rules = defaultWebpackConfig.module.rules;
+
+    config.module.rules.push({
+      test: /stories.js$/,
+      loaders: [
+        {
+          loader: require.resolve('@storybook/source-loader'),
+          options: {
+            prettierConfig: {
+              printWidth: 100,
+              singleQuote: false,
+            },
+          },
+        },
+      ],
+      include: srcPath,
+      enforce: 'pre',
+    });
+
     config.resolve.alias = { ...config.resolve.alias, '@': srcPath };
 
     return config;
