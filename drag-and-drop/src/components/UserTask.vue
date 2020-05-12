@@ -1,13 +1,8 @@
 <template>
   <div class="user-task">
     <div class="name">{{ name }}</div>
-    <droppable class="tasks">
-      <div
-        class="task"
-        v-for="task in tasks"
-        :key="task.id"
-        :style="computedTaskStyle(task.start, task.end)"
-      >
+    <droppable class="tasks" @drop="handleDrop">
+      <div class="task" v-for="task in tasks" :key="task.id" :style="computedTaskStyle(task)">
         <p>{{ task.name }}</p>
         <p>time: {{ task.start }} - {{ task.end }}</p>
       </div>
@@ -16,7 +11,7 @@
 </template>
 
 <script>
-import Droppable from '@/components/Droppable.vue'
+import Droppable from '@/components/Droppable.vue';
 
 export default {
   name: 'user-task',
@@ -34,14 +29,19 @@ export default {
     Droppable,
   },
   methods: {
-    computedTaskStyle(start, end) {
+    computedTaskStyle({ id, start, end }) {
       return {
         width: `${(end - start) * 50}px`,
         left: `${start * 50}px`,
-      }
+        'z-index': id,
+      };
+    },
+    handleDrop(id) {
+      console.log(JSON.parse(id));
+      this.tasks.push(JSON.parse(id));
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

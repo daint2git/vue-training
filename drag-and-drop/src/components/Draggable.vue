@@ -1,6 +1,7 @@
 <template>
   <component
     :is="tag"
+    :id="id"
     :draggable="draggable"
     @dragstart="dragStart"
     @drag="drag"
@@ -18,17 +19,24 @@ export default {
       type: String,
       default: 'div',
     },
+    id: {
+      type: String,
+      required: true,
+    },
     draggable: {
       type: Boolean,
       default: true,
     },
   },
   methods: {
-    dragStart() {},
+    dragStart(e) {
+      e.dataTransfer.setData('id', e.target.id);
+      this.$emit('start');
+    },
     drag() {},
-    dragEnd() {},
+    dragEnd(e) {
+      this.$emit('end', e.target.id);
+    },
   },
 };
 </script>
-
-

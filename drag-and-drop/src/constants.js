@@ -9,7 +9,7 @@ export const TASKS = [
     id: 2,
     name: 'xxx-2',
     start: 4,
-    end: 5,
+    end: 6,
   },
   {
     id: 3,
@@ -17,7 +17,7 @@ export const TASKS = [
     start: 7,
     end: 12,
   },
-]
+];
 
 export const USER_TASKS = [
   {
@@ -55,4 +55,4 @@ export const USER_TASKS = [
       },
     ],
   },
-]
+];

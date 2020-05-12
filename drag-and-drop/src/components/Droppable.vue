@@ -1,5 +1,10 @@
 <template>
-  <component :is="tag" @dragover.prevent @drop.prevent="drop">
+  <component
+    :is="tag"
+    @drop.prevent="onDrop"
+    @dragover.prevent="dragover"
+    @dragleave.prevent="dragleave"
+  >
     <slot />
   </component>
 </template>
@@ -14,11 +19,16 @@ export default {
     },
   },
   methods: {
-    drop() {
-      // this.$emit('drop', )
+    onDrop(e) {
+      this.$emit('drop', e.dataTransfer.getData('id'));
+      e.dataTransfer.clearData();
+    },
+    dragover(e) {
+      e.target.style.border = '1px dotted';
+    },
+    dragleave(e) {
+      e.target.style.border = 'initial';
     },
   },
 };
 </script>
-
-
